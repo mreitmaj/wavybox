@@ -1,0 +1,98 @@
+/* styles.css */
+
+/* Header styles */
+header {
+  background-color: #f2f2f2;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-right: 10px;
+}
+
+nav button {
+  padding: 10px 20px;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
+}
+
+/* Main content styles */
+main {
+  padding: 20px;
+}
+
+.page {
+  display: none;
+}
+
+.active-page {
+  display: block;
+}
+
+form {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.item h3 {
+  margin-top: 0;
+}
+
+.item img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Additional styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}

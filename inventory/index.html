@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Virtual Closet Dashboard</title>
+  <style>
+    /* Add some basic styling */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .item-card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .item-card img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    
+    .form-group {
+      margin-bottom: 10px;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: bold;
+    }
+    
+    .form-group input[type="text"],
+    .form-group select {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    
+    .form-group input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Virtual Closet Dashboard</h1>
+    
+    <!-- Add new item form -->
+    <h2>Add New Item</h2>
+    <form id="new-item-form">
+      <div class="form-group">
+        <label for="item-name">Item Name</label>
+        <input type="text" id="item-name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="item-description">Description</label>
+        <input type="text" id="item-description" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="item-category">Category</label>
+        <select id="item-category" required>
+          <option value="">Select a category</option>
+          <option value="tops">Tops</option>
+          <option value="bottoms">Bottoms</option>
+          <option value="shoes">Shoes</option>
+          <option value="dresses">Dresses</option>
+          <option value="outerwear">Outerwear</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="item-color">Color</label>
+        <input type="text" id="item-color" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="item-size">Size</label>
+        <input type="text" id="item-size" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="item-image">Image</label>
+        <input type="file" id="item-image" required>
+      </div>
+      
+      <div class="form-group">
+        <input type="submit" value="Add Item">
+      </div>
+    </form>
+    
+    <!-- Item list -->
+    <h2>My Items</h2>
+    <div id="item-list"></div>
+  </div>
+  
+  <script>
+    // Function to handle form submission
+    function addItem(event) {
+      event.preventDefault();
+      
+      // Get form values
+      const itemName = document.getElementById('item-name').value;
+      const itemDescription = document.getElementById('item-description').value;
+      const itemCategory = document.getElementById('item-category').value;
+      const itemColor = document.getElementById('item-color').value;
+      const itemSize = document.getElementById('item-size').value;
+      const itemImage = document.getElementById('item-image').value;
+      
+      // Create item card HTML
+      const itemCard = `
+        <div class="item-card">
+          <img src="${itemImage}" alt="${itemName}">
+          <h3>${itemName}</h3>
+          <p>${itemDescription}</p>
+          <p><strong>Category:</strong> ${itemCategory}</p>
+          <p><strong>Color:</strong> ${itemColor}</p>
+          <p><strong>Size:</strong> ${itemSize}</p>
+        </div>
+      `;
+      
+      // Append item card to the list
+      document.getElementById('item-list').insertAdjacentHTML('beforeend', itemCard);
+      
+      // Clear form fields
+      document.getElementById('new-item-form').reset();
+    }
+    
+    // Attach form submit event listener
+    document.getElementById('new-item-form').addEventListener('submit', addItem);
+  </script>
+</body>
+</html>
