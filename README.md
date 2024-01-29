@@ -3,4 +3,4 @@
 
 # [**WAVYBOX**](http://wavybox.com/)
 
-<a href="https://wwwwavybox.com/">WavyBox Website</a>
+<a href="https://wavybox.com/">WavyBox Website</a>
